@@ -1,7 +1,3 @@
-It looks like the repository does not have an existing README.md file. Based on the provided `main.py` file, here's a draft for your README file:
-
----
-
 # Friday v3
 
 Friday v3 is a Python-based voice recognition and text-to-speech application. This project uses the `speech_recognition` and `pyttsx3` libraries to listen to audio input from the microphone, convert it to text, and then speak it back to the user.
