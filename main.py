@@ -1,3 +1,4 @@
+from datetime import datetime
 import speech_recognition as sr
 import pyttsx3
 import signal
@@ -75,10 +76,23 @@ class Cpu:
         print('cpu_times: ', self.cpu_time)
         time.sleep(0.9)
 
+class wish:
+    def __init__(self):
+        self.stt = SpeechToText()
+    def wish_me(self):
+        time = int(datetime.now().hour)
+        if time<12:
+            self.stt.speak("Good Morning")
+        elif time>=12 and time<18:
+            self.stt.speak("Good Afternoon")
+        else:
+            self.stt.speak("Good Evening")
 signal.signal(signal.SIGINT, signal_handler)
 if __name__ == "__main__":
     stt = SpeechToText()
     while True:
+        wish = wish()
+        wish.wish_me()
         text = stt.listen()
         stt.speak(text)
         if "exit" in text:
